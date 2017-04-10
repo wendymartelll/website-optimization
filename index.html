@@ -8,10 +8,11 @@
     <title>Anthony Zamarro: Web Optimization Project</title>
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet">
+    <link href="css/print.css" rel="stylesheet" media="print">
 
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
@@ -21,43 +22,59 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
-    <script src="http://www.google-analytics.com/analytics.js"></script>
+    <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
   </head>
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
-      <p>Cameron Pittman<br><span>Course Developer</span></p>
+      <a href="/"><img src="img/me-in-cusco-extra-small_0x.jpg"></a>
+      <p>Anthony Zamarro<br><span>Website Optimization Project</span></p>
     </header>
 
     <div class="container">
       <div class="hero">
-        <strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
+        <h3>Project Summary</h3>
+        <p>This is the web optimization project. The goal is to render the web pages as quickly as possible (under one second) using the techniques we learned in the course.</p>
+        <p>
+          Some of these techniques include:
+          <ul>
+            <li>Minifying files</li>
+            <li>Compressing images</li>
+            <li>Inlining and prioritizing critical resources</li>
+            <li>Effectively utilizing HTTP caching</li>
+            <li>Optimizing the Critical Rendering Path (CRP) including:</li>
+              <ul>
+                <li>Minimizing overall bytes</li>
+                <li>Reducing the numer of critical resources</li>
+                <li>Shortening the CRP length</li>
+              </ul>
+          </ul>
+         </p>
       </div>
 
       <div class="content">
         <ul>
           <li>
-            <img src="https://lh4.ggpht.com/kJEnfqhPvtm4m3EneSZ4fWYGS8lW4YNhEjk6zPkyrQaBUHc-2Y_ElDic99NHI0h-UBLXVbRCjFybFvrWxdk=s100">
+            <img src="img/2048-small_1x.jpg">
             <a href="project-2048.html">Build Your Own 2048!</a>
             <p>I made my own version of 2048. How cool is that!?</p>
           </li>
 
           <li>
-            <img src="https://lh6.ggpht.com/f_0W8h__3G99CWTjnMjD8BUKm7yp2-wJyApLtTwFoFtlal2ULf_JgHIsOQq2NiYfKOdMlXlMHDKNo5XVZLs=s100">
+            <img src="img/web-perf-opt-small_1x.jpg">
             <a href="project-webperf.html">Website Performance Optimization</a>
             <p>Hey... this class looks familiar.</p>
           </li>
 
           <li>
-            <img src="https://lh5.ggpht.com/IKdCmTWn8a2nMhlwMYzryvzRN5CUZAOBr4tDrEAbszV7TIFe9pRAInA4kkYcgTXwrifJsBEsq1agTueuu-g=s100">
+            <img src="img/mobile-web-dev-small_1x.jpg">
             <a href="project-mobile.html">Mobile Web Development</a>
             <p>Making mobile apps isn't so hard after all.</p>
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img style="width: 100px;" src="img/pizzeria-small_1x.jpg">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
