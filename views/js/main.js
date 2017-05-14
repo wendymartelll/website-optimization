@@ -422,6 +422,11 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+
+
+   //Remove the DetermineDx function and wrap the switch statement and loop in the changePizzaSizes,
+   //effectively eliminating layout thrashing/FSL
+
    function changePizzaSizes(size) {
      var newwidth;
     // Changes the slider value to a percent width
@@ -439,6 +444,10 @@ var resizePizzas = function(size) {
           console.log("bug in sizeSwitcher");
       }
   // Iterates through pizza elements on the page and changes their widths
+
+  //Remove the read-write layout thrashing code
+  //Put .randomPizzaContainer into one variable and use getElementsByClassName to specifically target that class
+  //Get length of randomPizzas to make looping through elements much easier on browser
   var randomPizzas = document.getElementsByClassName(".randomPizzaContainer");
   var randomPizzasLength = randomPizzas.length;
     for (var i = 0; i < randomPizzasLength; i++) {
@@ -489,6 +498,10 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+
+  //Use getElementsByClassName and get length to help alleviate work in loop
+  //Remove layout thrashing inside loop for buttery smoothness
+  //Put the modulo numbers in a separate variable to enhance the buttery smoothness
   var items = document.getElementsByClassName('mover');
   var length = items.length;
   var scroll = document.body.scrollTop;
@@ -515,6 +528,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  //Display less pizzas because 200 is far too many for any viewport. 20 is manageable for all.
   for (var i = 0; i < 20; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
