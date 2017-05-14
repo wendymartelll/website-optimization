@@ -425,7 +425,6 @@ var resizePizzas = function(size) {
    function changePizzaSizes(size) {
      var newwidth;
     // Changes the slider value to a percent width
-    function sizeSwitcher (size) {
       switch(size) {
         case "1":
           newwidth = 25;
@@ -439,10 +438,10 @@ var resizePizzas = function(size) {
         default:
           console.log("bug in sizeSwitcher");
       }
-    }
   // Iterates through pizza elements on the page and changes their widths
-  var randomPizzas = document.querySelectorAll(".randomPizzaContainer")
-    for (var i = 0; i < randomPizzas.length; i++) {
+  var randomPizzas = document.getElementsByClassName(".randomPizzaContainer");
+  var randomPizzasLength = randomPizzas.length;
+    for (var i = 0; i < randomPizzasLength; i++) {
       randomPizzas[i].style.width = newwidth + '%';
     }
   }
@@ -490,11 +489,12 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
+  var length = items.length;
   var scroll = document.body.scrollTop;
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((scroll / 1250) + (i % 5));
+  for (var i = 0; i < length; i++) {
+    var modulo = i % 5;
+    var phase = Math.sin((scroll / 1250) + modulo);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -515,7 +515,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 20; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
