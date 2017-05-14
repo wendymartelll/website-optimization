@@ -1,1 +1,26 @@
-{"name":"webopts","version":"1.0.0","description":"website optimization project","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"git+https://github.com/jawaka72/website-optimization.git"},"author":"anthony","license":"ISC","bugs":{"url":"https://github.com/jawaka72/website-optimization/issues"},"homepage":"https://github.com/jawaka72/website-optimization#readme","devDependencies":{"grunt-responsive-images":"^1.10.1"}}
+{
+  "name": "webopts",
+  "version": "1.0.0",
+  "description": "website optimization project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawaka72/website-optimization.git"
+  },
+  "author": "anthony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawaka72/website-optimization/issues"
+  },
+  "homepage": "https://github.com/jawaka72/website-optimization#readme",
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-htmlmin": "^2.3.0",
+    "grunt-contrib-uglify": "^3.0.0",
+    "grunt-critical": "^0.2.2",
+    "grunt-responsive-images": "^1.10.1"
+  }
+}
