@@ -446,9 +446,9 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
 
   //Remove the read-write layout thrashing code
-  //Put .randomPizzaContainer into one variable and use getElementsByClassName to specifically target that class
+  //Put randomPizzaContainer into one variable and use getElementsByClassName to specifically target that class
   //Get length of randomPizzas to make looping through elements much easier on browser
-  var randomPizzas = document.getElementsByClassName(".randomPizzaContainer");
+  var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
   var randomPizzasLength = randomPizzas.length;
     for (var i = 0; i < randomPizzasLength; i++) {
       randomPizzas[i].style.width = newwidth + '%';
@@ -466,8 +466,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -526,10 +526,14 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
+  //Dynamically calculate the number of pizzas needed for each screen size
   var cols = 8;
   var s = 256;
+  var height = window.screen.height
+  var rows = height / s;
+  var pizzas = cols * rows;
   //Display less pizzas because 200 is far too many for any viewport. 20 is manageable for all.
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < pizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

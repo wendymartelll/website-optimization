@@ -16,6 +16,11 @@ There are two parts to this project; each focuses on a different aspect of web o
    - Next, go to https://developers.google.com/speed/pagespeed/insights/.
    - Copy and past the GH Pages URL into the input box and click the 'analyze' button.
    - Glorify in the fast page speed scores for mobile and desktop.
+###### Running Locally  
+  - To run the application locally, from the command line cd to where you downloaded the repo.
+  - type ```python -m SimpleHTTPServer 8000```
+  - In your browser, type localhost: 8000
+
 ###### Getting Rid of Jank
    - To run the second part, go to https://github.com/jawaka72/website-optimization and
    clone the repo.
